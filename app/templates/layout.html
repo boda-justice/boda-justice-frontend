@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% block body %}
 <header>
-  <h1><a href="/">{{ title }}</a></h1>
+  <nav class="nav-extended blue darken-2">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">{{ title }}</a>
+      <a href="#" data-target="navigation" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right">
+        <li>
+          <a class="waves-effect waves-light btn white blue-text" id="btnAdd"><i class="material-icons left">archive</i>install</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
 <main>
@@ -11,4 +21,5 @@
 <footer>
   <p>Hackathon Source code on <a href="https://github.com/boda-justice/boda-justice-frontend" target="_blank" rel="noopener">GitHub</a></p>
 </footer>
+
 {% endblock %}

@@ -14,6 +14,7 @@
       });
     });
   }
+
 })();
 
 let deferredPrompt;
@@ -43,3 +44,17 @@ btnAdd.addEventListener('click', (e) => {
 window.addEventListener('appinstalled', (evt) => {
   app.logEvent('app', 'installed');
 });
+
+// Initialize side nav
+document.addEventListener('DOMContentLoaded', function() {
+  var sidenav = document.querySelectorAll('.sidenav');
+  var sideNavInstances = M.Sidenav.init(sidenav, {});
+
+  var tabs = document.querySelectorAll('.tabs');
+  var tabsInstances = M.Tabs.init(tabs, {
+    swipeable : true,
+    responsiveThreshold : 1920
+  });
+});
+
+

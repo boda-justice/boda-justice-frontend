@@ -1,24 +1,27 @@
-# Flask PWA
-> A progressive webapp template.
+# Boda Justice
 
-Flask PWA is supposed to be a goto template when I start a new Flask project. It is constructed on a Model-Template-Controller perspective, which I find clear enough for my current projects.
+The Boda Justice app is an application that promotes Social Justice by enabling users to report complaints such as Police Harassment etc.
 
-You can check a live version at [Heroku](https://flask-pwa.herokuapp.com).
+## Getting Started
 
-## Features
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+- Just clone this repository by typing: `git clone https://github.com/boda-justice/boda-justice-frontend.git`
+- Switch to project directory: `cd boda-justice-frontend`
+- Install project requirements using python pipenv. But wait, you have to have some stuff before you get to this point. So these are:
 
-* Blueprint oriented, Flask 1.0 project
-* Instantly deployable on Heroku
-* Off-the-shelf progressive web app behaviour
-* Service worker based on Workbox
+### Prerequisites
 
-## Installation
-
-```shell
-> git clone https://github.com/umluizlima/flask-pwa
-> cd flask-pwa
-> pipenv install
+- Python3.5 and above
+- Python pipenv
+Just type:
 ```
+python -V
+```
+in your terminal and if its not greater than or equal to 3.5, you're not in big trouble, there are tons of tutorials to get up up and running with these. Just grub one then come back when done.
+
+### Installing
+
+Now, you have python3 and a way of running a virtual environment. Lets set up the project environment.(remember we're still in the app directory)
 
 ## Usage
 
@@ -39,15 +42,49 @@ This makes **nGrok** useful for testing the PWA functionality, as it allows you 
 > ngrok http 80
 ```
 
-## Links
 
-- Repository: https://github.com/umluizlima/flask-pwa
-- Issue tracker: https://github.com/umluizlima/flask-pwa/issues
-- Inspiration and references:
-  - [Google's Seu Primeiro PWA](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=pt-br)
-  - [Flask PWA demo](https://github.com/uwi-info3180/flask-pwa)
-  - [Google's Workbox](https://developers.google.com/web/tools/workbox/)
+This is enough to get you started.
+You can now run the application using:
+`pipenv run flask run`
 
-## Licensing
 
-This project is licensed under MIT license.
+## Running the tests
+
+No automated tests yet.
+
+## Deployment
+
+This app is ready for Heroku. You can deploy your copy of this app by:
+`heroku create <your_url_name>` (where <your_url_name> is what you want to call your app)
+`git push heroku master` 
+..and boom, you're done! You can chat me on gitter in case of any problems.(gitter link is on badge above)
+If you have never worked with Heroku, you can learn how to [Deploy Python Applications on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+
+## Built With
+
+* [Python Flask](https://www.fullstackpython.com/flask.html) - The web framework used
+* [MaterializeCSS](https://materializecss.com) - The sleek styling
+
+## Contributing
+
+TBD
+
+## Versioning
+
+For the versions available, see the [tags on this repository](https://github.com/boda-justice/boda-justice-frontend/tags). 
+
+## Authors
+
+* **James Lemayian** - *Developing* - [@Lemmah](https://github.com/lemmah)
+
+* **Newton Adams** - *Developing* - [@Blackadams](https://github.com/Blackadams)
+
+
+## License
+
+This project is currently under the MIT License.
+
+## Acknowledgments
+
+TBD
+

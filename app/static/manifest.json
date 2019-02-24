@@ -3,7 +3,7 @@
   "short_name": "Boda Justice",
   "description": "A progressive webapp for the Boda Justice Platform",
   "theme_color": "transparent",
-  "background_color": "transparent",
+  "background_color": "white",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",

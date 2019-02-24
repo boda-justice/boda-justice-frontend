@@ -1,18 +1,37 @@
 from flask import (
-    Blueprint, render_template
+    Blueprint, render_template, request, redirect, session
 )
+
+from app.services.apicalls import Request
 
 bp = Blueprint('main', __name__)
 
+request_body = {
+    'endpoint': '',
+    'data': '',
+    'headers': ''
+}
 
-@bp.route('/')
+@bp.route('/', methods=['GET'])
 def index():
-    return render_template('main/index.html',
-                           title='Boda Justice')
+    return redirect('/login')
 
 
-@bp.route('/login')
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        data = request.form 
+        body = request_body
+        body['endpoint'], body['data'], body['headers'] = '/login/', {'username': data['username'], 'password': data['password']}, {'Content-Type': 'application/json'}
+        authenticate = Request(**body)
+        token = authenticate.post()
+        session['token'] = token
+        print(session['token'])
+        headers = {'Content-Type': 'application/json', 'Authorization': 'Token {0}'.format(session['token'])}
+        body = {'endpoint': '/user/', 'headers': headers, 'data': {}}
+        user_profile = Request(**body)
+        print(user_profile.get())
+
     return render_template('main/index.html',
                             title='Boda Justice')
 
@@ -37,3 +56,9 @@ def complainants_dashboard():
 def complainants_registration():
     return render_template('complainants/registration.html',
                             title='Boda Justice')
+@bp.route('/test-offences', methods=['GET'])
+def list_offences():
+    offences = Request(**{ 'endpoint': '/list-offences/', 'data': '', 'headers': ''})
+    offences_list = offences.get()
+    print(offences_list)
+    return offences_list

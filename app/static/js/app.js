@@ -47,14 +47,15 @@ window.addEventListener('appinstalled', (evt) => {
 
 // Initialize side nav
 document.addEventListener('DOMContentLoaded', function() {
-  var sidenav = document.querySelectorAll('.sidenav');
-  var sideNavInstances = M.Sidenav.init(sidenav, {});
+  var sidenavs = document.querySelectorAll('.sidenav');
+  for (let i = 0; i < sidenavs.length; i++) {
+    M.SideNav.init(sidenavs[i]);
+  }
 
-  var tabs = document.querySelectorAll('.tabs');
-  var tabsInstances = M.Tabs.init(tabs, {
-    swipeable : true,
-    responsiveThreshold : 1920
-  });
+  var modals = document.querySelectorAll('.modal')
+  for (var i = 0; i < modals.length; i++){
+    M.Modal.init(modals[i]);
+  }
 });
 
 

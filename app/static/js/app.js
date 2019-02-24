@@ -49,7 +49,7 @@ window.addEventListener('appinstalled', (evt) => {
 document.addEventListener('DOMContentLoaded', function() {
   var sidenavs = document.querySelectorAll('.sidenav');
   for (let i = 0; i < sidenavs.length; i++) {
-    M.SideNav.init(sidenavs[i]);
+    M.Sidenav.init(sidenavs[i]);
   }
 
   var modals = document.querySelectorAll('.modal')

@@ -1,1 +1,8 @@
+#btnAdd {
+  display: inline-block;
+  visibility: hidden;
+}
 
+.sacramento {
+  font-family: 'Sacramento', cursive;
+}

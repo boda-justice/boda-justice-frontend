@@ -26,3 +26,14 @@ def lawyers_dashboard():
 def lawyers_registration():
     return render_template('lawyers/registration.html',
                             title='Boda Justice')
+
+@bp.route('/complainants')
+def complainants_dashboard():
+    return render_template('complainants/index.html',
+                            title='Boda Justice',
+                            logged_in=True)
+
+@bp.route('/complainants/register')
+def complainants_registration():
+    return render_template('complainants/registration.html',
+                            title='Boda Justice')

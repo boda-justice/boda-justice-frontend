@@ -1,5 +1,6 @@
 import json
 import requests
+from flask import jsonify
 
 def template_error(response):
   print(response)
@@ -18,19 +19,13 @@ class Request():
 
   def post(self):
     response = requests.post(self.url, headers=self.headers, data=json.dumps(self.data))
-    if response.status_code >= 400:
-      return template_error(response)
-    return json.loads(response.text)
+    return response._content
 
   def get(self):
     response = requests.get(self.url, headers=self.headers)
-    if response.status_code >= 400:
-      return template_error(response)
     print(response._content)
     return response._content
   
   def put(self):
     response = requests.put(self.url, headers=self.headers, data=json.dumps(self.data))
-    if response.status_code >= 400:
-      return template_error(response)
-    return json.loads(response.text)
+    return response._content
